@@ -1,10 +1,11 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { HomepageComponent } from './homepage/homepage.component';
+import { AppComponent } from './app.component';
+import { PokemonListComponent } from './pokemon-list/pokemon-list.component';
 
 const routes: Routes = [
   {
-    path: '', component: HomepageComponent, pathMatch: 'full'
+    path: '', component: PokemonListComponent, pathMatch: 'full'
   }
 ];
 
