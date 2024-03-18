@@ -12,6 +12,7 @@ export class PokemonListComponent {
   constructor(private route: ActivatedRoute) {}
 
   ngOnInit() {
-    this.pokemonList = this.route.snapshot.data['pokemon'];
+    this.pokemonList = this.route.snapshot.data['pokemon'].results;
+    console.log(this.pokemonList)
   }
 }

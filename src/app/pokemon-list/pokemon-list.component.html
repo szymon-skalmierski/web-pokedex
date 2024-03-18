@@ -1,5 +1,5 @@
 <div class="container">
-    <app-pokemon></app-pokemon>
-    <app-pokemon></app-pokemon>
-    <app-pokemon></app-pokemon>
+    @for (pokemon of pokemonList; track pokemon.id){
+        <app-pokemon [name]="pokemon.name.replace('-', ' ')"></app-pokemon>
+    }
 </div>
