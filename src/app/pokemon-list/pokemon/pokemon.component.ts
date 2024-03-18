@@ -6,5 +6,6 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./pokemon.component.scss']
 })
 export class PokemonComponent {
+  @Input() id!: number;
   @Input() name!: string;
 }
