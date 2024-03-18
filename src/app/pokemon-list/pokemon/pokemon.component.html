@@ -1,7 +1,12 @@
 <mat-card>
     <mat-card-header>
         <h2>
-            {{ name | titlecase }}
+            <span>
+                {{ name | titlecase }}
+            </span>
+            <span>
+                #{{ id }}
+            </span>
         </h2>
     </mat-card-header>
     <mat-card-content>
