@@ -10,6 +10,6 @@
         </h2>
     </mat-card-header>
     <mat-card-content>
-        <img mat-card-lg-image [src]="'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/'+id+'.png'">
+        <img mat-card-lg-image [src]="'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/'+id+'.png' || ''" [alt]="name">
     </mat-card-content>
 </mat-card>
