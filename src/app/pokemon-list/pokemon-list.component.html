@@ -1,5 +1,5 @@
 <div class="container">
     @for (pokemon of pokemonList; track pokemon.name; let i = $index){
-        <app-pokemon [id]="i+1" [name]="pokemon.name.replace('-', ' ')"></app-pokemon>
+        <app-pokemon [id]="i+1" [name]="pokemon.name.replace('-', ' ')" routerLink="{{i+1}}"></app-pokemon>
     }
 </div>

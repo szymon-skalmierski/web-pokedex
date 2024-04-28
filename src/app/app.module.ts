@@ -10,12 +10,14 @@ import { MatCardModule } from '@angular/material/card';
 import { PokemonListComponent } from './pokemon-list/pokemon-list.component';
 import { PokemonComponent } from './pokemon-list/pokemon/pokemon.component';
 import { HttpClientModule } from '@angular/common/http';
+import { PokemonDetailsComponent } from './pokemon-list/pokemon-details/pokemon-details.component';
 
 @NgModule({
   declarations: [
     AppComponent,
+    PokemonComponent,
     PokemonListComponent,
-    PokemonComponent
+    PokemonDetailsComponent
   ],
   imports: [
     BrowserModule,
