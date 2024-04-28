@@ -1,3 +1,10 @@
+:host {
+    transition: 0.3s;
+    &:hover {
+        scale: 1.05;
+    }
+}
+
 mat-card-content {
     position: relative;
     display: flex;
