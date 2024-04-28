@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-pokemon-details',
@@ -6,5 +7,11 @@ import { Component } from '@angular/core';
   styleUrl: './pokemon-details.component.scss'
 })
 export class PokemonDetailsComponent {
+  pokemonInfo: any;
 
+  constructor(private route: ActivatedRoute) {}
+
+  ngOnInit() {
+    this.pokemonInfo = this.route.snapshot.data['pokemonInfo'];
+  }
 }
