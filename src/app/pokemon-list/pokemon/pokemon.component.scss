@@ -1,18 +1,26 @@
 :host {
-    transition: 0.3s;
-    &:hover {
-        scale: 1.05;
-    }
+    height: 100%;
+    background-color: rgb(56, 56, 56);
+    // transition: 0.3s;
+    // &:hover {
+    //     scale: 1.05;
+    // }
 }
 
-mat-card-content {
-    position: relative;
-    display: flex;
-    justify-content: center;
-}
+.mat-grid-tile-header {
+    background-color: rgb(233, 81, 81);
 
-h2 {
-    width: 100%;
     display: flex;
     justify-content: space-between;
+}
+
+.view {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    height: 100%;
+    width: 100%;
+}
+img {
+    width: 70%;
 }

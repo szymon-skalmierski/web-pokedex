@@ -1,15 +1,12 @@
-<mat-card>
-    <mat-card-header>
-        <h2>
-            <span>
-                {{ name | titlecase }}
-            </span>
-            <span>
-                #{{ id }}
-            </span>
-        </h2>
-    </mat-card-header>
-    <mat-card-content>
-        <img mat-card-lg-image [src]="'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/'+id+'.png' || ''" [alt]="name">
-    </mat-card-content>
-</mat-card>
+
+<mat-grid-tile-header>
+    <span>
+        {{ name | titlecase }}
+    </span>
+    <span>
+        #{{ id }}
+    </span>
+</mat-grid-tile-header>
+<div class="view">
+    <img mat-card-lg-image [src]="'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/'+id+'.png' || ''" [alt]="name">
+</div>
