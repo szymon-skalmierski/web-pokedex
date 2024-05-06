@@ -12,6 +12,7 @@ import { PokemonListComponent } from './pokemon-list/pokemon-list.component';
 import { PokemonComponent } from './pokemon-list/pokemon/pokemon.component';
 import { HttpClientModule } from '@angular/common/http';
 import { PokemonDetailsComponent } from './pokemon-list/pokemon-details/pokemon-details.component';
+import {MatPaginatorModule} from '@angular/material/paginator';
 
 @NgModule({
   declarations: [
@@ -28,6 +29,7 @@ import { PokemonDetailsComponent } from './pokemon-list/pokemon-details/pokemon-
     MatToolbarModule,
     MatCardModule,
     MatGridListModule,
+    MatPaginatorModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
