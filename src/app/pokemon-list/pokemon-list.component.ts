@@ -8,7 +8,8 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./pokemon-list.component.scss']
 })
 export class PokemonListComponent {
-  pageSize: number = 25;
+  pageSizeOptions: number[] = [25, 50, 100];
+  pageSize: number = this.pageSizeOptions[0] ?? 25;
   pageIndex: number = 0;
   pokemonList!: {id: number, name: string, url: string, deferStatus: boolean}[];
 
