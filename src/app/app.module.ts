@@ -12,7 +12,8 @@ import { PokemonListComponent } from './pokemon-list/pokemon-list.component';
 import { PokemonComponent } from './pokemon-list/pokemon/pokemon.component';
 import { HttpClientModule } from '@angular/common/http';
 import { PokemonDetailsComponent } from './pokemon-list/pokemon-details/pokemon-details.component';
-import {MatPaginatorModule} from '@angular/material/paginator';
+import { MatPaginatorModule, MatPaginatorIntl } from '@angular/material/paginator';
+import { CustomMatPaginator } from './pokemon-list/custom-mat-paginator';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,10 @@ import {MatPaginatorModule} from '@angular/material/paginator';
     MatGridListModule,
     MatPaginatorModule,
   ],
-  providers: [],
+  providers: [{
+    provide: MatPaginatorIntl, 
+    useClass: CustomMatPaginator
+  }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
