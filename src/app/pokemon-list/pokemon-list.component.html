@@ -2,7 +2,7 @@
                class="demo-paginator"
                [length]="pokemonList.length"
                [pageSize]="pageSize"
-               [pageSizeOptions]="[25, 50, 100]"
+               [pageSizeOptions]="pageSizeOptions"
                [showFirstLastButtons]="true"
                (page)="handlePageEvent($event)"
                aria-label="Select page">
