@@ -14,6 +14,9 @@ import { HttpClientModule } from '@angular/common/http';
 import { PokemonDetailsComponent } from './pokemon-list/pokemon-details/pokemon-details.component';
 import { MatPaginatorModule, MatPaginatorIntl } from '@angular/material/paginator';
 import { CustomMatPaginator } from './pokemon-list/custom-mat-paginator';
+import { MatInputModule } from '@angular/material/input';
+import { MatIconModule } from '@angular/material/icon';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -26,11 +29,14 @@ import { CustomMatPaginator } from './pokemon-list/custom-mat-paginator';
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
+    FormsModule,
     HttpClientModule,
     MatToolbarModule,
     MatCardModule,
     MatGridListModule,
     MatPaginatorModule,
+    MatInputModule,
+    MatIconModule,
   ],
   providers: [{
     provide: MatPaginatorIntl, 

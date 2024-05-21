@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, OnInit } from '@angular/core';
+import { AfterViewInit, Component, Input, OnInit } from '@angular/core';
 import { PageEvent } from '@angular/material/paginator';
 import { ActivatedRoute } from '@angular/router';
 
@@ -11,6 +11,7 @@ export class PokemonListComponent implements OnInit {
   pageSizeOptions: number[] = [25, 50, 100];
   pageSize: number = this.pageSizeOptions[0] ?? 25;
   pageIndex: number = 0;
+  pageNameFilter: string = "";
   pokemonList!: {name: string, url: string}[];
 
   constructor(private route: ActivatedRoute) {}

@@ -1,4 +1,9 @@
-<mat-paginator #paginator
+<div class="toolbar">
+  <mat-form-field class="example-form-field" subscriptSizing="dynamic">
+    <mat-label>Name</mat-label>
+    <input matInput type="text" [(ngModel)]="pageNameFilter">
+  </mat-form-field>
+  <mat-paginator #paginator
                class="demo-paginator"
                [length]="pokemonList.length"
                [pageSize]="pageSize"
@@ -6,7 +11,8 @@
                [showFirstLastButtons]="true"
                (page)="handlePageEvent($event)"
                aria-label="Select page">
-</mat-paginator>
+    </mat-paginator>
+</div>
 
 <div class="container">
     <mat-grid-list cols="5" gutterSize="25px">

@@ -1,3 +1,5 @@
+@use '/src/assets/vars';
+
 :host {
     height: 100%;
     background-color: rgb(56, 56, 56);
@@ -8,7 +10,7 @@
 }
 
 .mat-grid-tile-header {
-    background-color: rgb(233, 81, 81);
+    background-color: vars.$main-theme-color;
 
     display: flex;
     justify-content: space-between;
