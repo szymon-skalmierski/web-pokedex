@@ -15,7 +15,7 @@ export class PokemonListComponent implements OnInit {
   _pokemonList!: Pokemon[];
 
   get pokemonList(): Pokemon[] {
-    return this._pokemonList.filter(pokemon=>pokemon.name.startsWith(this.pageNameFilter))
+    return this._pokemonList.filter(pokemon=>pokemon.name.startsWith(this.pageNameFilter.toLowerCase()))
   }
 
   constructor(private route: ActivatedRoute) {}
