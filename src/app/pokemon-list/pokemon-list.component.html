@@ -18,7 +18,7 @@
     <mat-grid-list cols="5" gutterSize="25px">
         @for (pokemon of pokemonList.slice(pageIndex*pageSize, (pageIndex+1)*pageSize); track pokemon.name; let i = $index){
             <mat-grid-tile>
-                <app-pokemon [id]="pageIndex*pageSize+i+1" [name]="pokemon.name.replace('-', ' ')" routerLink="{{i+1}}"></app-pokemon>
+                <app-pokemon [id]="pokemon.id" [name]="pokemon.name.replace('-', ' ')" routerLink="{{pokemon.id}}"></app-pokemon>
             </mat-grid-tile>
         }
     </mat-grid-list>

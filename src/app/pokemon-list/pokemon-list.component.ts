@@ -12,13 +12,19 @@ export class PokemonListComponent implements OnInit {
   pageSize: number = this.pageSizeOptions[0] ?? 25;
   pageIndex: number = 0;
   pageNameFilter: string = "";
-  pokemonList!: {name: string, url: string}[];
+  _pokemonList!: {id: number, name: string, url: string}[];
+
+  get pokemonList(): {id: number, name: string, url: string}[] {
+    return this._pokemonList.filter(pokemon=>pokemon.name.startsWith(this.pageNameFilter))
+  }
 
   constructor(private route: ActivatedRoute) {}
 
   ngOnInit() {
-    this.pokemonList = this.route.snapshot.data['pokemon'].results;
-    console.log(this.pokemonList);
+    this._pokemonList = this.route.snapshot.data['pokemon'].results.map((element: {id: number, name: string, url: string}) => {
+      element.id = +(element.url.match(/\/\d+\//g)![0].replaceAll("/", ""));
+      return element;
+    });
   }
 
   handlePageEvent(e: PageEvent) {
