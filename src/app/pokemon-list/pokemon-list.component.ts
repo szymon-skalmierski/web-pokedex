@@ -12,16 +12,16 @@ export class PokemonListComponent implements OnInit {
   pageSize: number = this.pageSizeOptions[0] ?? 25;
   pageIndex: number = 0;
   pageNameFilter: string = "";
-  _pokemonList!: {id: number, name: string, url: string}[];
+  _pokemonList!: Pokemon[];
 
-  get pokemonList(): {id: number, name: string, url: string}[] {
+  get pokemonList(): Pokemon[] {
     return this._pokemonList.filter(pokemon=>pokemon.name.startsWith(this.pageNameFilter))
   }
 
   constructor(private route: ActivatedRoute) {}
 
   ngOnInit() {
-    this._pokemonList = this.route.snapshot.data['pokemon'].results.map((element: {id: number, name: string, url: string}) => {
+    this._pokemonList = this.route.snapshot.data['pokemon'].results.map((element: Pokemon) => {
       element.id = +(element.url.match(/\/\d+\//g)![0].replaceAll("/", ""));
       return element;
     });
@@ -31,4 +31,10 @@ export class PokemonListComponent implements OnInit {
     this.pageSize = e.pageSize;
     this.pageIndex = e.pageIndex;
   }
+}
+
+interface Pokemon {
+  id: number, 
+  name: string, 
+  url: string,
 }
