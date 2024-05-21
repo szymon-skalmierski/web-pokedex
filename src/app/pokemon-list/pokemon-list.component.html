@@ -7,8 +7,8 @@
                (page)="handlePageEvent($event)"
                aria-label="Select page">
 </mat-paginator>
+
 <div class="container">
-    
     <mat-grid-list cols="5" gutterSize="25px">
         @for (pokemon of pokemonList.slice(pageIndex*pageSize, (pageIndex+1)*pageSize); track pokemon.name; let i = $index){
             <mat-grid-tile>
@@ -16,5 +16,4 @@
             </mat-grid-tile>
         }
     </mat-grid-list>
-    
 </div>
