@@ -13,5 +13,6 @@ export class PokemonDetailsComponent {
 
   ngOnInit() {
     this.pokemonInfo = this.route.snapshot.data['pokemonInfo'];
+    console.log(this.pokemonInfo)
   }
 }
