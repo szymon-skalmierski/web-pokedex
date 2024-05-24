@@ -1,9 +1,13 @@
 <div class="container">
     <div class="image">
-        <img [src]="pokemonInfo.sprites.other['official-artwork'].front_default" alt="Pokemon">
-        <img [src]="pokemonInfo.sprites.other['official-artwork'].front_shiny" alt="Pokemon">
+        <img [src]="isShiny ? pokemonInfo.sprites.other['official-artwork'].front_shiny : pokemonInfo.sprites.other['official-artwork'].front_default" alt="Pokemon" (click)="toggleImg()">
     </div>
     <div class="right">
-        Stats
+        <div class="header"><span>{{ pokemonInfo.name | uppercase }}</span> <span>#{{ pokemonInfo.id }}</span></div>
+        <mat-tab-group mat-stretch-tabs="false" mat-align-tabs="center">
+            <mat-tab label="Types">Types</mat-tab>
+            <mat-tab label="Moves">Moves</mat-tab>
+            <mat-tab label="Stats">Stats</mat-tab>
+          </mat-tab-group>
     </div>
 </div>

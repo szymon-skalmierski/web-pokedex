@@ -3,16 +3,39 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    color: rgb(231, 231, 231);
 }
 
 .container {
     display: flex;
-    justify-content: space-between;
+    gap: 2%;
 
-    height: 50%;
-    width: 70%;
+    height: 70%;
+    aspect-ratio: 1/1;
 
-    img {
-        height: 256px;
+    .image {
+        display: flex;
+        align-items: center;
+        flex: 1 1 0;
+
+        img {
+            width: 100%;
+        }
     }
+
+    .right {
+        flex: 1 1 0;
+
+        .header {
+            font-size: 1.3rem;
+            display: flex;
+            justify-content: space-between;
+        }
+
+    }
+}
+
+::ng-deep .mat-mdc-tab-header {
+    margin-top: 10px;
+    margin-bottom: 15px;
 }

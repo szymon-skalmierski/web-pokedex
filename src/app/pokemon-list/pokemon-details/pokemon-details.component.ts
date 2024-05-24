@@ -8,11 +8,16 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class PokemonDetailsComponent {
   pokemonInfo: any;
+  isShiny: boolean = false;
 
   constructor(private route: ActivatedRoute) {}
 
   ngOnInit() {
     this.pokemonInfo = this.route.snapshot.data['pokemonInfo'];
     console.log(this.pokemonInfo)
+  }
+
+  toggleImg() {
+    this.isShiny = !this.isShiny;
   }
 }
