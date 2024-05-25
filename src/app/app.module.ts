@@ -17,6 +17,7 @@ import { CustomMatPaginator } from './pokemon-list/custom-mat-paginator';
 import { MatInputModule } from '@angular/material/input';
 import { MatIconModule } from '@angular/material/icon';
 import { FormsModule } from '@angular/forms';
+import { MatTabsModule } from '@angular/material/tabs';
 
 @NgModule({
   declarations: [
@@ -37,6 +38,7 @@ import { FormsModule } from '@angular/forms';
     MatPaginatorModule,
     MatInputModule,
     MatIconModule,
+    MatTabsModule,
   ],
   providers: [{
     provide: MatPaginatorIntl, 
