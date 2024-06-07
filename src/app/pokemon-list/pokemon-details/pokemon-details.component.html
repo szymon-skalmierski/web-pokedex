@@ -1,6 +1,6 @@
 <div class="container">
     <div class="image">
-        <img [src]="isShiny ? pokemonInfo.sprites.other['official-artwork'].front_shiny : pokemonInfo.sprites.other['official-artwork'].front_default" alt="Pokemon" (click)="toggleImg()">
+        <img [src]="" alt="Pokemon" appShiny [host]="sprites">
     </div>
     <div class="right">
         <div class="header"><span>{{ pokemonInfo.name | uppercase }}</span> <span>#{{ pokemonInfo.id }}</span></div>
