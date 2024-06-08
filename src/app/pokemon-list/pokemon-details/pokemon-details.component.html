@@ -9,7 +9,7 @@
                 <mat-list>
                     @for (type of types; track type) {
                         <mat-list-item>
-                            <mat-icon [svgIcon]="type+'-type'" matListItemIcon></mat-icon>
+                            <mat-icon [svgIcon]="type+'-type'" [class]="type" matListItemIcon></mat-icon>
                             <div matListItemTitle>{{ type | uppercase }}</div>
                         </mat-list-item>
                     }
