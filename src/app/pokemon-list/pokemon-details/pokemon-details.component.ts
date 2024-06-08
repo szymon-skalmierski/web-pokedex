@@ -9,6 +9,7 @@ import { ActivatedRoute } from '@angular/router';
 export class PokemonDetailsComponent {
   pokemonInfo: any;
   sprites!: string[];
+  types!: string[];
 
   constructor(private route: ActivatedRoute) {}
 
@@ -17,5 +18,8 @@ export class PokemonDetailsComponent {
     
     const artwork = this.pokemonInfo.sprites.other['official-artwork'];
     this.sprites = [artwork.front_default, artwork.front_shiny];
+
+    this.types = (this.pokemonInfo.types as Array<any>).map((value)=>value.type.name);
+    console.log(this.pokemonInfo);
   }
 }

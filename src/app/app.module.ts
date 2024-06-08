@@ -18,6 +18,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatIconModule } from '@angular/material/icon';
 import { FormsModule } from '@angular/forms';
 import { MatTabsModule } from '@angular/material/tabs';
+import { MatListModule } from '@angular/material/list';
 import { ShinyDirective } from './pokemon-list/pokemon-details/shiny.directive';
 
 @NgModule({
@@ -40,6 +41,7 @@ import { ShinyDirective } from './pokemon-list/pokemon-details/shiny.directive';
     MatInputModule,
     MatIconModule,
     MatTabsModule,
+    MatListModule,
     ShinyDirective,
   ],
   providers: [{

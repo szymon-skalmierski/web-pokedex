@@ -5,7 +5,16 @@
     <div class="right">
         <div class="header"><span>{{ pokemonInfo.name | uppercase }}</span> <span>#{{ pokemonInfo.id }}</span></div>
         <mat-tab-group mat-stretch-tabs="false" mat-align-tabs="center">
-            <mat-tab label="Types">Types</mat-tab>
+            <mat-tab label="Types">
+                <mat-list>
+                    @for (type of types; track type) {
+                        <mat-list-item>
+                            <mat-icon [svgIcon]="type+'-type'" matListItemIcon></mat-icon>
+                            <div matListItemTitle>{{ type | uppercase }}</div>
+                        </mat-list-item>
+                    }
+                </mat-list>
+            </mat-tab>
             <mat-tab label="Moves">Moves</mat-tab>
             <mat-tab label="Stats">Stats</mat-tab>
           </mat-tab-group>
