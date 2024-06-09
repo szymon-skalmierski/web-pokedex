@@ -10,7 +10,7 @@ export class PokemonDetailsComponent {
   pokemonInfo: any;
   sprites!: string[];
   types!: string[];
-  stats: {name: string, value: number}[] = [{name: 'hp', value: 15}];
+  stats!: {name: string, value: number}[];
   statsColumns: string[] = ['name', 'value'];
 
   constructor(private route: ActivatedRoute) {}
