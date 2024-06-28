@@ -18,6 +18,13 @@
   }
 }
 
+mat-grid-tile {
+  transition: 0.3s;
+    &:hover {
+        scale: 1.05;
+    }
+}
+
 ::ng-deep {
     .mdc-text-field--filled:not(.mdc-text-field--disabled).mdc-text-field--focused .mdc-floating-label--float-above {
         color: var(--mdc-filled-text-field-label-text-color) !important;

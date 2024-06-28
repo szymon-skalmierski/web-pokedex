@@ -1,18 +1,25 @@
 <div class="container">
     <div class="image">
-        <img [src]="" alt="Pokemon" appShiny [host]="sprites">
+        <img [src]="" alt="Pokemon" appShiny [host]="sprites" />
     </div>
     <div class="right">
-        <div class="header"><span>{{ pokemonInfo.name | uppercase }}</span> <span>#{{ pokemonInfo.id }}</span></div>
+        <div class="header">
+            <span>{{ pokemonInfo.name | uppercase }}</span>
+            <span>#{{ pokemonInfo.id }}</span>
+        </div>
         <mat-tab-group mat-stretch-tabs="false" mat-align-tabs="center">
             <mat-tab label="Types">
                 <div class="wrapper">
                     <mat-list>
                         @for (type of types; track type) {
-                            <mat-list-item>
-                                <mat-icon [svgIcon]="type+'-type'" [class]="type" matListItemIcon></mat-icon>
-                                <div matListItemTitle>{{ type | uppercase }}</div>
-                            </mat-list-item>
+                        <mat-list-item>
+                            <mat-icon
+                                [svgIcon]="type + '-type'"
+                                [class]="type"
+                                matListItemIcon
+                            ></mat-icon>
+                            <div matListItemTitle>{{ type | uppercase }}</div>
+                        </mat-list-item>
                         }
                     </mat-list>
                 </div>
@@ -20,20 +27,42 @@
             <mat-tab label="Moves">Moves</mat-tab>
             <mat-tab label="Stats">
                 <div class="wrapper">
-                    <table mat-table [dataSource]="stats" class="mat-elevation-z8">
+                    <table
+                        mat-table
+                        [dataSource]="stats"
+                        class="mat-elevation-z8"
+                    >
                         <ng-container matColumnDef="name">
-                          <th mat-header-cell *matHeaderCellDef> Stat </th>
-                          <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+                            <th mat-header-cell *matHeaderCellDef>Stat</th>
+                            <td mat-cell *matCellDef="let element">
+                                {{ element.name }}
+                            </td>
                         </ng-container>
-                      
+
                         <!-- Name Column -->
                         <ng-container matColumnDef="value">
-                          <th mat-header-cell *matHeaderCellDef> Value </th>
-                          <td mat-cell *matCellDef="let element" [style]="'background-image: linear-gradient(to right, rgba(255,0,0,0.2) ' + element.value/2 + '%, rgba(0,0,0,0) ' + element.value/2 + '% 100%)'" (click)="csl(element.value)"> {{element.value}} </td>
+                            <th mat-header-cell *matHeaderCellDef>Value</th>
+                            <td
+                                mat-cell
+                                *matCellDef="let element"
+                                [style]="
+                                    'background-image: linear-gradient(to right, rgba(255,0,0,0.2) ' +
+                                    element.value / 2 +
+                                    '%, rgba(0,0,0,0) ' +
+                                    element.value / 2 +
+                                    '% 100%)'
+                                "
+                                (click)="csl(element.value)"
+                            >
+                                {{ element.value }}
+                            </td>
                         </ng-container>
-                      
+
                         <tr mat-header-row *matHeaderRowDef="statsColumns"></tr>
-                        <tr mat-row *matRowDef="let row; columns: statsColumns;"></tr>
+                        <tr
+                            mat-row
+                            *matRowDef="let row; columns: statsColumns"
+                        ></tr>
                     </table>
                 </div>
             </mat-tab>

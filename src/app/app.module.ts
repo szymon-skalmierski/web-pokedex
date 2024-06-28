@@ -1,26 +1,27 @@
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 import { BrowserModule } from '@angular/platform-browser';
-
-import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
-import { MatToolbarModule } from '@angular/material/toolbar';
-import { MatCardModule } from '@angular/material/card';
-import { MatGridListModule } from '@angular/material/grid-list';
-import { PokemonListComponent } from './pokemon-list/pokemon-list.component';
-import { PokemonComponent } from './pokemon-list/pokemon/pokemon.component';
-import { HttpClientModule } from '@angular/common/http';
-import { PokemonDetailsComponent } from './pokemon-list/pokemon-details/pokemon-details.component';
-import { MatPaginatorModule, MatPaginatorIntl } from '@angular/material/paginator';
+import { AppComponent } from './app.component';
+import { AppRoutingModule } from './app-routing.module';
 import { CustomMatPaginator } from './pokemon-list/custom-mat-paginator';
-import { MatInputModule } from '@angular/material/input';
+import { PokemonComponent } from './pokemon-list/pokemon/pokemon.component';
+import { PokemonListComponent } from './pokemon-list/pokemon-list.component';
+import { ShinyDirective } from './pokemon-list/pokemon-details/shiny.directive';
+import { PokemonDetailsComponent } from './pokemon-list/pokemon-details/pokemon-details.component';
+
+import { MatCardModule } from '@angular/material/card';
 import { MatIconModule } from '@angular/material/icon';
-import { FormsModule } from '@angular/forms';
 import { MatTabsModule } from '@angular/material/tabs';
 import { MatListModule } from '@angular/material/list';
 import { MatTableModule } from '@angular/material/table';
-import { ShinyDirective } from './pokemon-list/pokemon-details/shiny.directive';
+import { MatInputModule } from '@angular/material/input';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatGridListModule } from '@angular/material/grid-list';
+import { MatPaginatorModule, MatPaginatorIntl } from '@angular/material/paginator';
+
 
 @NgModule({
   declarations: [

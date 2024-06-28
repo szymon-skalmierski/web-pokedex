@@ -9,17 +9,21 @@ import { pokemonDetailsResolver } from './pokemon-list/pokemon-details/pokemon-d
 
 const routes: Routes = [
   {
-    path: '', component: PokemonListComponent, pathMatch: 'full',
-    resolve: {pokemon: pokemonListResolver}
+    path: '',
+    component: PokemonListComponent,
+    pathMatch: 'full',
+    resolve: { pokemon: pokemonListResolver },
   },
   {
-    path: ':id', component: PokemonDetailsComponent, pathMatch: 'full',
-    resolve: {pokemonInfo: pokemonDetailsResolver}
-  }
+    path: ':id',
+    component: PokemonDetailsComponent,
+    pathMatch: 'full',
+    resolve: { pokemonInfo: pokemonDetailsResolver },
+  },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}
