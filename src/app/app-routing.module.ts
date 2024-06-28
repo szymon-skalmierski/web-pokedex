@@ -12,13 +12,13 @@ const routes: Routes = [
     path: '',
     component: PokemonListComponent,
     pathMatch: 'full',
-    resolve: { pokemon: pokemonListResolver },
+    // resolve: { pokemon: pokemonListResolver },
   },
   {
     path: ':id',
     component: PokemonDetailsComponent,
     pathMatch: 'full',
-    resolve: { pokemonInfo: pokemonDetailsResolver },
+    // resolve: { pokemonInfo: pokemonDetailsResolver },
   },
 ];
 
