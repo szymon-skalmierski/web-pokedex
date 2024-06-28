@@ -18,7 +18,7 @@ const routes: Routes = [
     path: ':id',
     component: PokemonDetailsComponent,
     pathMatch: 'full',
-    // resolve: { pokemonInfo: pokemonDetailsResolver },
+    resolve: { pokemonInfo: pokemonDetailsResolver },
   },
 ];
 
