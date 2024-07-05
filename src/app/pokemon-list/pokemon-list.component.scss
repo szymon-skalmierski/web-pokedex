@@ -35,6 +35,9 @@ mat-grid-tile {
     .mdc-text-field--filled:not(.mdc-text-field--disabled) .mdc-line-ripple::after {
         border-bottom-color: vars.$main-theme-color !important;
     }
+    .mat-mdc-form-field-subscript-wrapper {
+      display: none !important;
+    }
 }
 
 

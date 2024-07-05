@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppComponent } from './app.component';
@@ -18,6 +18,7 @@ import { MatTabsModule } from '@angular/material/tabs';
 import { MatListModule } from '@angular/material/list';
 import { MatTableModule } from '@angular/material/table';
 import { MatInputModule } from '@angular/material/input';
+import { MatSelectModule } from '@angular/material/select';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatPaginatorModule, MatPaginatorIntl } from '@angular/material/paginator';
@@ -35,6 +36,7 @@ import { MatPaginatorModule, MatPaginatorIntl } from '@angular/material/paginato
     AppRoutingModule,
     BrowserAnimationsModule,
     FormsModule,
+    ReactiveFormsModule,
     HttpClientModule,
     MatToolbarModule,
     MatCardModule,
@@ -45,6 +47,7 @@ import { MatPaginatorModule, MatPaginatorIntl } from '@angular/material/paginato
     MatTabsModule,
     MatListModule,
     MatTableModule,
+    MatSelectModule,
     ShinyDirective,
   ],
   providers: [{
