@@ -62,11 +62,6 @@ export class PokemonListComponent implements OnInit {
     // );
   }
 
-  showControl() {
-    console.log(this.selectedTypes);
-    console.log(this.pokemonList[0])
-  }
-
   handlePageEvent(e: PageEvent) {
     this.pageSize = e.pageSize;
     this.pageIndex = e.pageIndex;
