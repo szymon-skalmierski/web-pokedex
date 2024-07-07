@@ -6,11 +6,19 @@
     <mat-form-field>
         <mat-label>Types</mat-label>
         <mat-select [formControl]="selectedTypes" multiple>
-          @for (type of types; track type) {
+            @for (type of types; track type) {
             <mat-option [value]="type">{{ type | titlecase }}</mat-option>
-          }
+            }
         </mat-select>
-      </mat-form-field>
+    </mat-form-field>
+    <mat-form-field>
+        <mat-label>Generations</mat-label>
+        <mat-select [formControl]="selectedGens" multiple>
+            @for (generation of gens; track generation) {
+            <mat-option [value]="generation">{{ generation.name }}</mat-option>
+            }
+        </mat-select>
+    </mat-form-field>
     <mat-paginator
         #paginator
         class="demo-paginator"

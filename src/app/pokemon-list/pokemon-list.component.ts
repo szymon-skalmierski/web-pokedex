@@ -17,17 +17,30 @@ export class PokemonListComponent implements OnInit {
   pageNameFilter: string = '';
   pageSizeOptions: number[] = [25, 50, 100];
   pageSize: number = this.pageSizeOptions[0] ?? 25;
+  selectedGens = new FormControl([]);
   selectedTypes = new FormControl([]);
+  gens!: { name: string, first: number; last: number }[];
   types!: string[];
 
   get pokemonList(): any[] {
     return this._pokemonList.filter((pokemon: any) => {
       let isDesiredName = pokemon.name.english.startsWith(this.pageNameFilter.toLowerCase());
       let isDesiredType = true;
+      let isDesiredGen = false;
       if(this.selectedTypes !== null) {
         isDesiredType = this.selectedTypes.value!.every((el) => pokemon.type.includes((el[0] as string).toUpperCase() + (el as string).substring(1)))
       }
-      return isDesiredName && isDesiredType;
+      if(this.selectedGens !== null && this.selectedGens.value!.length > 0) {
+        for(let gen of this.selectedGens.value!) {
+          if(pokemon.id >= (gen as {name: string, first: string, last: string}).first && pokemon.id <= (gen as {name: string, first: string, last: string}).last) {
+            isDesiredGen = true;
+            break;
+          }
+        }
+      } else {
+        isDesiredGen = true;
+      }
+      return isDesiredName && isDesiredType && isDesiredGen;
     });
   }
 
@@ -35,6 +48,7 @@ export class PokemonListComponent implements OnInit {
 
   ngOnInit() {
     this.types = this.pokemonService.types;
+    this.gens = this.pokemonService.gens;
   }
 
   handlePageEvent(e: PageEvent) {
