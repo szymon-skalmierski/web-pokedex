@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { MatIconRegistry } from '@angular/material/icon';
 import { DomSanitizer } from '@angular/platform-browser';
+import { PokemonService } from './pokemon-list/pokemon.service';
 
 @Component({
   selector: 'app-root',
@@ -9,32 +10,13 @@ import { DomSanitizer } from '@angular/platform-browser';
 })
 export class AppComponent {
   title = 'web-pokedex';
-  private allTypes: string[] = [
-    'bug',
-    'dark',
-    'dragon',
-    'electric',
-    'fairy',
-    'fighting',
-    'fire',
-    'flying',
-    'ghost',
-    'grass',
-    'ground',
-    'ice',
-    'normal',
-    'poison',
-    'psychic',
-    'rock',
-    'steel',
-    'water',
-  ];
 
   constructor(
     private matIconRegistry: MatIconRegistry,
-    private domSanitizer: DomSanitizer
+    private domSanitizer: DomSanitizer,
+    private pokemonService: PokemonService
   ) {
-    this.allTypes.forEach((value) => {
+    this.pokemonService.types.forEach((value) => {
       this.matIconRegistry.addSvgIcon(
         `${value}-type`,
         this.domSanitizer.bypassSecurityTrustResourceUrl(

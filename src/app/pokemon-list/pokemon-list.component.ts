@@ -1,9 +1,9 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
-import { ActivatedRoute } from '@angular/router';
 import { PageEvent } from '@angular/material/paginator';
 
 import _pokedex from '../../assets/json/pokedex.json';
+import { PokemonService } from './pokemon.service';
 const pokedex: Pokemon[] = _pokedex as Pokemon[];
 
 @Component({
@@ -11,33 +11,14 @@ const pokedex: Pokemon[] = _pokedex as Pokemon[];
   templateUrl: './pokemon-list.component.html',
   styleUrls: ['./pokemon-list.component.scss'],
 })
-export class PokemonListComponent {
-  pageSizeOptions: number[] = [25, 50, 100];
-  pageSize: number = this.pageSizeOptions[0] ?? 25;
+export class PokemonListComponent implements OnInit {
+  private _pokemonList: Pokemon[] = pokedex;
   pageIndex: number = 0;
   pageNameFilter: string = '';
+  pageSizeOptions: number[] = [25, 50, 100];
+  pageSize: number = this.pageSizeOptions[0] ?? 25;
   selectedTypes = new FormControl([]);
-  types: string[] = [
-    'bug',
-    'dark',
-    'dragon',
-    'electric',
-    'fairy',
-    'fighting',
-    'fire',
-    'flying',
-    'ghost',
-    'grass',
-    'ground',
-    'ice',
-    'normal',
-    'poison',
-    'psychic',
-    'rock',
-    'steel',
-    'water',
-  ];
-  private _pokemonList: Pokemon[] = pokedex;
+  types!: string[];
 
   get pokemonList(): any[] {
     return this._pokemonList.filter((pokemon: any) => {
@@ -50,7 +31,11 @@ export class PokemonListComponent {
     });
   }
 
-  constructor(private route: ActivatedRoute) {}
+  constructor(private pokemonService: PokemonService) {}
+
+  ngOnInit() {
+    this.types = this.pokemonService.types;
+  }
 
   handlePageEvent(e: PageEvent) {
     this.pageSize = e.pageSize;
