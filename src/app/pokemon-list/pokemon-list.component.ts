@@ -1,18 +1,17 @@
-import { ActivatedRoute } from '@angular/router';
-import { Component, OnInit } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { PageEvent } from '@angular/material/paginator';
-import pokedex from '../../assets/json/pokedex.json';
+import { Component } from '@angular/core';
 import { FormControl } from '@angular/forms';
+import { ActivatedRoute } from '@angular/router';
+import { PageEvent } from '@angular/material/paginator';
 
-const _pokedex:Pokemon[] = pokedex as Pokemon[];
+import _pokedex from '../../assets/json/pokedex.json';
+const pokedex: Pokemon[] = _pokedex as Pokemon[];
 
 @Component({
   selector: 'app-pokemon-list',
   templateUrl: './pokemon-list.component.html',
   styleUrls: ['./pokemon-list.component.scss'],
 })
-export class PokemonListComponent implements OnInit {
+export class PokemonListComponent {
   pageSizeOptions: number[] = [25, 50, 100];
   pageSize: number = this.pageSizeOptions[0] ?? 25;
   pageIndex: number = 0;
@@ -38,7 +37,7 @@ export class PokemonListComponent implements OnInit {
     'steel',
     'water',
   ];
-  private _pokemonList: Pokemon[] = _pokedex;
+  private _pokemonList: Pokemon[] = pokedex;
 
   get pokemonList(): any[] {
     return this._pokemonList.filter((pokemon: any) => {
@@ -52,15 +51,6 @@ export class PokemonListComponent implements OnInit {
   }
 
   constructor(private route: ActivatedRoute) {}
-
-  ngOnInit() {
-    // this._pokemonList = this.route.snapshot.data['pokemon'].results.map(
-    //   (element: Pokemon) => {
-    //     element.id = +element.url.match(/\/\d+\//g)![0].replaceAll('/', '');
-    //     return element;
-    //   }
-    // );
-  }
 
   handlePageEvent(e: PageEvent) {
     this.pageSize = e.pageSize;

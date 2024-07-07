@@ -3,14 +3,14 @@ import { Injectable } from '@angular/core';
 
 @Injectable()
 export class CustomMatPaginator extends MatPaginatorIntl {
-  getAndInitTranslations() {
+  overrideProperties() {
     this.itemsPerPageLabel = 'Pokemons per page';
     this.changes.next();
   }
 
   constructor() {
     super();
-    this.getAndInitTranslations();
+    this.overrideProperties();
   }
 
   override getRangeLabel = (page: number, pageSize: number, length: number) => {

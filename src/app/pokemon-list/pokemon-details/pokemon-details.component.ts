@@ -30,8 +30,4 @@ export class PokemonDetailsComponent {
     }));
     console.log(this.stats);
   }
-
-  csl(a: any) {
-    console.log(a);
-  }
 }
