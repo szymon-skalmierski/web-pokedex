@@ -1,0 +1,63 @@
+@use '@angular/material' as mat;
+
+$custom-palette: (
+ 50: #fcecee,
+ 100: #f9cfd3,
+ 200: #da7877,
+ 300: #da7877,
+ 400: #e65955,
+ 500: #eb4a3c,
+ 600: #dc413b,
+ 700: #ca3835,
+ 800: #be312e,
+ 900: #af2722,
+ contrast: (
+   50: rgba(black, 0.87),
+   100: rgba(black, 0.87),
+   200: rgba(black, 0.87),
+   300: rgba(black, 0.87),
+   400: rgba(black, 0.87),
+   500: white,
+   600: white,
+   700: white,
+   800: white,
+   900: white,
+ )
+);
+
+$custom-accent-palette: (
+ 50: #ffebef,
+ 100: #ffced5,
+ 200: #f49b9f,
+ 300: #ec7379,
+ 400: #f85157,
+ 500: #ff3e3e,
+ 600: #ef343d,
+ 700: #dd2936,
+ 800: #d0212f,
+ 900: #c21023,
+ contrast: (
+   50: rgba(black, 0.87),
+   100: rgba(black, 0.87),
+   200: rgba(black, 0.87),
+   300: rgba(black, 0.87),
+   400: rgba(black, 0.87),
+   500: white,
+   600: white,
+   700: white,
+   800: white,
+   900: white,
+ )
+);
+
+$my-primary: mat.define-palette($custom-palette, 500);
+$my-accent: mat.define-palette($custom-accent-palette, 500);
+
+$dark-theme: mat.define-dark-theme((
+  color: (
+    primary: $my-primary,
+    accent: $my-accent,
+  ),
+));
+
+@include mat.all-component-themes($dark-theme);
