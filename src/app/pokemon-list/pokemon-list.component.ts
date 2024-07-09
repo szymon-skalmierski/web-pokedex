@@ -24,7 +24,7 @@ export class PokemonListComponent implements OnInit {
 
   get pokemonList(): any[] {
     return this._pokemonList.filter((pokemon: any) => {
-      let isDesiredName = pokemon.name.english.startsWith(this.pageNameFilter.toLowerCase());
+      let isDesiredName = pokemon.name.english.toLowerCase().startsWith(this.pageNameFilter.toLowerCase());
       let isDesiredType = true;
       let isDesiredGen = false;
       if(this.selectedTypes !== null) {
