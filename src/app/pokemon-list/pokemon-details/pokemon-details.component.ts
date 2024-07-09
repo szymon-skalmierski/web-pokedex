@@ -21,13 +21,14 @@ export class PokemonDetailsComponent {
     const artwork = this.pokemonInfo.sprites.other['official-artwork'];
     this.sprites = [artwork.front_default, artwork.front_shiny];
 
+
     this.types = (this.pokemonInfo.types as Array<any>).map(
       (value) => value.type.name
     );
+
     this.stats = (this.pokemonInfo.stats as Array<any>).map((value) => ({
       name: value.stat.name,
       value: value.base_stat,
     }));
-    console.log(this.stats);
   }
 }
