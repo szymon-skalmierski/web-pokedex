@@ -11,6 +11,7 @@ export class PokemonDetailsComponent {
   sprites!: string[];
   types!: string[];
   stats!: { name: string; value: number }[];
+  abilities!: string[];
   statsColumns: string[] = ['name', 'value'];
 
   constructor(private route: ActivatedRoute) {}
@@ -30,5 +31,10 @@ export class PokemonDetailsComponent {
       name: value.stat.name,
       value: value.base_stat,
     }));
+
+    this.abilities = (this.pokemonInfo.abilities as Array<any>).map(
+      (value) => value.ability.name
+    );
+    console.log(this.pokemonInfo)
   }
 }

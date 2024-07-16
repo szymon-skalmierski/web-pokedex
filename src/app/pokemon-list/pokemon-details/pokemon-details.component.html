@@ -24,7 +24,17 @@
                     </mat-list>
                 </div>
             </mat-tab>
-            <mat-tab label="Moves">Moves</mat-tab>
+            <mat-tab label="Abilities">
+                <div class="wrapper">
+                    <mat-list>
+                        @for (ability of abilities; track ability) {
+                        <mat-list-item>
+                            <div class="ability" matListItemTitle>{{ ability | uppercase }}</div>
+                        </mat-list-item>
+                        }
+                    </mat-list>
+                </div>
+            </mat-tab>
             <mat-tab label="Stats">
                 <div class="wrapper">
                     <table

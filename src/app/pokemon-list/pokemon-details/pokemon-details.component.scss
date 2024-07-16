@@ -44,7 +44,7 @@
             padding: 0 0 0 5%;
 
             mat-list-item {
-                padding: 15% 0;
+                padding: 14% 0;
             }
 
             mat-list-item:hover {
@@ -54,7 +54,7 @@
                 }
 
                 [matListItemTitle] {
-                    font-size: 2.1rem;
+                    font-size: 1.5rem;
                 }
             }
 
@@ -66,10 +66,16 @@
             }
 
             [matListItemTitle] {
-                font-size: 1.8rem;
+                font-size: 1.1rem;
                 letter-spacing: 3px;
                 transition: 200ms all;
+
+                &.ability {
+                    text-align: center;
+                }
             }
+
+            
         }
 
         .mat-column-name {
