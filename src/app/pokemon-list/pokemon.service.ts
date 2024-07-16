@@ -1,9 +1,15 @@
 import { Injectable } from '@angular/core';
 
+import { Pokemon } from './pokemon';
+import _pokedex from '../../assets/json/pokedex.json';
+
+const pokedex: Pokemon[] = _pokedex as Pokemon[];
+
 @Injectable({
   providedIn: 'root',
 })
 export class PokemonService {
+  private _pokemonList: Pokemon[] = pokedex;
   types: string[] = [
     'bug',
     'dark',
@@ -37,4 +43,26 @@ export class PokemonService {
   ];
 
   constructor() {}
+
+  getDesiredPokemonList(types: string[], name: string, gens: {name: string, first: number, last: number}[]) {
+    return this._pokemonList.filter((pokemon: any) => {
+      let isDesiredName = pokemon.name.english.toLowerCase().startsWith(name.toLowerCase());
+      let isDesiredType = true;
+      let isDesiredGen = false;
+      if(types !== null) {
+        isDesiredType = types.every((el) => pokemon.type.includes((el[0] as string).toUpperCase() + (el as string).substring(1)))
+      }
+      if(gens !== null && gens.length > 0) {
+        for(let gen of gens) {
+          if(pokemon.id >= gen.first && pokemon.id <= gen.last) {
+            isDesiredGen = true;
+            break;
+          }
+        }
+      } else {
+        isDesiredGen = true;
+      }
+      return isDesiredName && isDesiredType && isDesiredGen;
+    });
+  }
 }
